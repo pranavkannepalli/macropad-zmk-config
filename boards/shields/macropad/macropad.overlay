@@ -1,23 +1,23 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / { 
-    &kscan0 {
-    compatible = "zmk,kscan-gpio-matrix";
-    diode-direction = "col2row";
-    wakeup-source;
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
 
-    col-gpios
-        = <&pro_micro 21 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
-        ;
-    row-gpios = <
-            &pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
-            &pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
-            &pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
-            &pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
-        >;
+        col-gpios
+            = <&pro_micro 21 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+            ;
+        row-gpios = <
+                &pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+                &pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+                &pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+                &pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+            >;
     };
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
