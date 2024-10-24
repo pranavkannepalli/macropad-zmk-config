@@ -32,6 +32,6 @@
                             &none          &none        &none        &none
                         >;
                                         
-                }
+                };
         };
 };
