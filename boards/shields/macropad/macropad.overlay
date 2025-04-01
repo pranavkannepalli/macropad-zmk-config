@@ -19,6 +19,7 @@
                 &pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
             >;
     };
+    
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <4>;
@@ -30,30 +31,31 @@
             RC(3,0) RC(3,1) RC(3,2) RC(3,3)
         >;
     };
+    
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
         kscan = <&kscan0>;
     };
-};
 
-&pro_micro_i2c {
-    status = "okay";
+    &pro_micro_i2c {
+        status = "okay";
 
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
+        oled: ssd1306@3c {
+            compatible = "solomon,ssd1306fb";
+            reg = <0x3c>;
+            width = <128>;
+            height = <32>;
+            segment-offset = <0>;
+            page-offset = <0>;
+            display-offset = <0>;
+            multiplex-ratio = <31>;
+            segment-remap;
+            com-invdir;
+            com-sequential;
+            inversion-on;
+            prechargep = <0x22>;
+        };
     };
 };
